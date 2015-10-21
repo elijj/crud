@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery.min.js"></script> 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/jquery.raty-fa.js"></script>
+<meta name="description" content="Bootstrap/JQuery Practice">
+  <meta charset="utf-8">
+  <title>Review</title>
+</head>
+<body>
+  <!-- Create a new container -->
+  <div class = "container">
+    <h1>
+    	Your trip to Sydney, Australia
+    </h1>
+    <p> 
+    	Image of Product 
+    </p>
+    <p> 
+    	Here is a description of what you did.
+    </p>
+    <h3> 
+    	Write a review!
+    </h3>
+    <p>
+    	Stars for rating <div id='star' data-score='1' number='5'></div>
+    </p>
+    <!-- Create a Bootstrap row -->
+    <div class="row">
+     <!-- what columns are preferable here-->
+      <div class="col-xs-12 col-lg-12">
+        
+        <form>
+        	<div class='form-group'>
+        		<input type="text" class="form-control" placeholder="a title for your review">
+		  	</div>
+		  	<div class='form-group'>
+		  		<textarea class="form-control" rows="2" placeholder="What did you think of this?"></textarea>
+		  	</div>
+		  <button type="submit" class ='btn btn-primary'>Save</button>
+        </form>
+        <h3> 
+	    	Reviews on similar trips!
+	    </h3>
+        <section id='reviewSection'>
+
+        </section>
+
+      </div> <!-- are columns necessary?-->
+   	</div> <!-- are rows necessary?-->
+    
+
+  <!-- end of  container -->  
+  </div>
+
+  
+</form>
+
+</body>
+</html>
+
+
+
