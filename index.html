@@ -1,65 +1,104 @@
 <!DOCTYPE html>
-<html>
-<head>
-<script src="https://code.jquery.com/jquery.min.js"></script> 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="//netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/jquery.raty-fa.js"></script>
-<meta name="description" content="Bootstrap/JQuery Practice">
-  <meta charset="utf-8">
-  <title>Review</title>
-</head>
-<body>
-  <!-- Create a new container -->
-  <div class = "container">
-    <h1>
-    	Your trip to Sydney, Australia
-    </h1>
-    <p> 
-    	Image of Product 
-    </p>
-    <p> 
-    	Here is a description of what you did.
-    </p>
-    <h3> 
-    	Write a review!
-    </h3>
-    <p>
-    	Stars for rating <div id='star' data-score='1' number='5'></div>
-    </p>
-    <!-- Create a Bootstrap row -->
-    <div class="row">
-     <!-- what columns are preferable here-->
-      <div class="col-xs-12 col-lg-12">
-        
-        <form>
-        	<div class='form-group'>
-        		<input type="text" class="form-control" placeholder="a title for your review">
-		  	</div>
-		  	<div class='form-group'>
-		  		<textarea class="form-control" rows="2" placeholder="What did you think of this?"></textarea>
-		  	</div>
-		  <button type="submit" class ='btn btn-primary'>Save</button>
-        </form>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <script src="https://code.jquery.com/jquery.min.js"></script> 
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://www.parsecdn.com/js/parse-1.6.0.min.js"></script>
+        <script src="js/jquery.raty-fa.js"></script>
+
+        <!--<script type="text/jsx">
+
+        var review = React.createClass({
+            doSomething: function() {
+                alert("The text displaying is: " + this.props.children);
+            },
+            render: function() {
+                return(
+                        <div>
+                            <h3>{this.props.user}</h3>
+                            <a onClick={this.doSomething} href="#" >Click me</a>
+                        </div>
+                );
+            }
+        });
+
+        React.render(
+                <div>
+                    <review user="u1">This guy is awesome</review>
+                    <review user="u2">She smells like mints</review>
+                </div>,
+                document.getElementById('react')
+        );
+
+        </script> -->
+
+       <title>Review</title>
+    </head>
+    <body>
+      <!-- Create a new container -->
+      <div class = "container">
+        <h1>
+        	Your trip to Sydney, Australia
+        </h1>
+        <p> 
+        	Image of Product 
+        </p>
+        <p> 
+        	Here is a description of what you did.
+        </p>
+        <p>
+          Average rating: <span id='avgStar'></span>
+        </p>
         <h3> 
-	    	Reviews on similar trips!
-	    </h3>
-        <section id='reviewSection'>
+        	Write a review!
+        </h3>
+        <p>
+        	 <div id='star'></div>
+        </p>
+        <!-- Create a Bootstrap row -->
+        <div class="row">
+         <!-- what columns are preferable here-->
+          <div class="col-xs-12 col-lg-12">
+            
+            <form>
+            	<div class='form-group'>
+            		<input type="text" class="form-control" placeholder="a title for your review" id='title'>
+      		  	</div>
+      		  	<div class='form-group'>
+      		  		<textarea class="form-control" rows="2" placeholder="What did you think of this?" id='body'></textarea>
+      		  	</div>
+      		  <button type="submit" class ='btn btn-primary'>Save</button>
+            </form>
+            <h3> 
+      	    	Reviews on similar trips!
+      	    </h3>
 
-        </section>
+            <section id='reviewSection'>
 
-      </div> <!-- are columns necessary?-->
-   	</div> <!-- are rows necessary?-->
-    
+            </section>
 
-  <!-- end of  container -->  
-  </div>
+            <div id='react'>
 
-  
-</form>
+            </div>
 
-</body>
+          </div> <!-- are columns necessary?-->
+       	</div> <!-- are rows necessary?-->
+        
+
+      <!-- end of  container -->  
+      </div>
+
+      
+    </form>
+
+    </body>
+    <script src="js/crud.js"></script>
 </html>
 
 
