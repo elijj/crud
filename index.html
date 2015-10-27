@@ -55,6 +55,18 @@
         <p>
           Average rating: <span id='avgStar'></span>
         </p>
+
+        <!-- user input-->
+        <form id="log-in">
+          <h2>Sign in</h2>
+              <label for="username">Username</label>
+              <input id="username" class="form-control"></input>
+              <label for="password">Password</label>
+              <input id="password" class="form-control"></input>
+            <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+      <button id="log-out" class="btn btn-danger">Logout</button>
+
         <h3> 
         	Write a review!
         </h3>
@@ -66,7 +78,7 @@
          <!-- what columns are preferable here-->
           <div class="col-xs-12 col-lg-12">
             
-            <form>
+            <form id='reviewForm'>
             	<div class='form-group'>
             		<input type="text" class="form-control" placeholder="a title for your review" id='title'>
       		  	</div>

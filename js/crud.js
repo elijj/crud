@@ -3,11 +3,39 @@ var jsKey = 'UBD5kTCwOt6hOFLSTVnvB2SMZUA6dEauDXZkhXCu';
 Parse.initialize(appKey, jsKey);
 var Review = Parse.Object.extend('Review');
 
-//gameScore.increment("score");
-//gameScore.save();
+//sign in
+// Assign a "submit" event to your log-in form.
+ $('#log-in').submit(function() {
+   var userName = $('#username').val();
+   var pass = $("#password").val();
+   Parse.User.logIn(userName, pass).then(
+    function(user) {
+        // Do stuff after successful login.
+        console.log('success!')
+      },
+     function(error) {
+        // The login failed. Check error to see why.
+        console.log('error!')
+      }
+    );
+   return false;
+   
+ });
 
 
-$('form').submit(function() { 
+
+
+// Assign a "click" event to the #log-out button
+ $("#log-out").click(function() {
+   Parse.User.logOut().then(function() {
+       console.log('current user ', Parse.User.current())
+     
+   })
+});
+//
+
+
+$('#reviewForm').submit(function() { 
 	var reviewObject = new Review();
 	reviewObject.set('body', $('#body').val() );
 	reviewObject.set('title', $('#title').val() );
@@ -19,10 +47,30 @@ $('form').submit(function() {
 	return false;
 });
 
-$('button').on('click',function(){
 
-	console.log('click', this.attr('class') + 'was clicked')
+
+//~~~~~~~~~~~~~~~~~~
+
+$('.glyphicon glyphicon-thumbs-up').on('click',function(){
+
+	console.log('click', this.id + 'was clicked');
 })
+
+//$('.glyphicon glyphicon-thumbs-down').click(
+
+
+	var vote = function(dom){
+
+	console.log('click', dom.innerHTML + 'was clicked');
+}
+
+//upvote - downvote
+//object.increment(attr)
+//object.save()
+//delete
+//.text() when addItem
+
+//sign in and sign out
 
 var getData = function() {
 	var query = new Parse.Query(Review);
@@ -70,7 +118,16 @@ var addItem = function(item) {
 	var div = $('<div>');
 	div.append(span);
 	//$(li).addClass('list-group-item');
-	$(div).append(created + ' ' +title + ' ' + body + ' '+ stars + "<button class ='glyphicon glyphicon-thumbs-up'></button><button class ='glyphicon glyphicon-thumbs-down'></button>");
+	var upVote = $('<button>');
+	var downVote = $('<button>');
+	upVote.attr('class','glyphicon glyphicon-thumbs-up');
+	upVote.click(function(){
+		alert('You did it mofo');
+	})
+
+
+	$(div).append(created + ' ' +title + ' ' + body + ' '+ stars);
+	$(div).append(upVote);//+"<button class ='glyphicon glyphicon-thumbs-down'></button>");
 	$('#reviewSection').append(div);
 	// Time pending, create a button that removes the data item on click
 }
@@ -85,5 +142,5 @@ $('#avgStar').raty({
 }); */
 
 
-
+console.log('please',$('body').html());
 getData();
