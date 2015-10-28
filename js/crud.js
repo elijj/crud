@@ -176,7 +176,7 @@ var addItem = function(item) {
 	var result = template(data);
 	$(div).append(spanStar);
 	$(div).append(result);
-	if(item.get('author') != globalUser.get('username')){
+	if(item.get('author') == globalUser.get('username')){
 		$(div).append(deleteButton);
 	}
 	if($.inArray(globalUser.get('username'),item.get('voted')) == -1){
