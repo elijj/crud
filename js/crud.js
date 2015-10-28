@@ -10,7 +10,6 @@ var globalPw;
 var loginHTML;
 
 
-console.log(globalUser.get('username'));
 // "submit" event to #log-in form.
  $('#log-in').submit(function() {
    event.preventDefault();
